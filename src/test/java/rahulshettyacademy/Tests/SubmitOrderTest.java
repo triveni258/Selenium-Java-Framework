@@ -35,6 +35,9 @@ public class SubmitOrderTest extends BaseClass
 
 
         }
+        public void orderHistoryTest() throws IOException, InterruptedException {
+        
+        }
 
     }
 
