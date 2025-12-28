@@ -9,7 +9,8 @@ import rahulshettyacademy.TestComponent.BaseClass;
 
 import java.util.List;
 
-public class errorLoginValdation extends BaseClass {
+public class errorLoginValdation extends BaseClass
+{
 
 
 
@@ -33,5 +34,6 @@ public class errorLoginValdation extends BaseClass {
         Boolean match = cartPage.VerifyProductDisplay("ZARA COAT 33");
         Assert.assertTrue(match);
     }
+
 
 }
