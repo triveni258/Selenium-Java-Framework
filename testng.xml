@@ -1,20 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="Error Login Validation Test">
-        <classes>
-            <class name="rahulshettyacademy.Tests.errorLoginValdation"/>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true" name="Stand Alone Test">
-        <classes>
-            <class name="rahulshettyacademy.Tests.StandAloneTest"/>
-        </classes>
-    </test>
-
-
-
-
-
-
-        </suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="D:/TriveniWorkSpace-doNotTouch/Selenium_JavaFreamework/src/test/java/rahulshettyacademy/stepDefination/stepDefinatonImpl.java"><classes/></test></suite>
