@@ -9,9 +9,9 @@
             <class name="rahulshettyacademy.Tests.errorLoginValdation"/>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name="Stand Alone Test">
+    <test verbose="2" preserve-order="true" name="SubmitOrderTest">
         <classes>
-            <class name="rahulshettyacademy.Tests.StandAloneTest"/>
+            <class name="rahulshettyacademy.Tests.SubmitOrderTest"/>
         </classes>
     </test>
 

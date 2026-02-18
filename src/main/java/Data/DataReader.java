@@ -21,7 +21,9 @@ public class DataReader {
                         ("user.dir") + "/src/test/resources/Data/PurchaseOrder.json"),
                         StandardCharsets.UTF_8);
         ObjectMapper mapper = new ObjectMapper();
-        List<HashMap<String, String>> data = (List)mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
+        List<HashMap<String, String>> data =
+                (List)mapper.readValue(jsonContent,
+                        new TypeReference<List<HashMap<String,String>>>() {
         });
         return data;
     }

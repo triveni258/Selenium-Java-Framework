@@ -2,43 +2,43 @@ package rahulshettyacademy.Tests;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import rahulshettyacademy.PageObjectFiles.*;
 import rahulshettyacademy.TestComponent.BaseClass;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
-public class SubmitOrderTest extends BaseClass
-{
-    @Test
+public class SubmitOrderTest extends BaseClass {
+    @Test(dataProvider = "getData")
 
-        public void SubmitOrderTesr() throws IOException, InterruptedException {
+    public void SubmitOrderTest(HashMap<String, String> input) throws IOException, InterruptedException {
             // TODO Auto-generated method stub
-
-            String productName = "ZARA COAT 3";
-           // LandingPage landingPage=launchApplication(); Used before method in baseClass
-          ProductCatPage productCatPage = landingPage.loginApplication("triveni.bhaskar999@gmail.com","Kitaboo@123");
-            List<WebElement> products=productCatPage.getProductList();
-            productCatPage.addToCart(productName);
-            CartPage cartPage =productCatPage.goToCart();
-            Boolean match = cartPage.VerifyProductDisplay(productName);
+            ProductCatPage productCatPage = landingPage.loginApplication(input.get("email"),input.get("password"));
+            List<WebElement> products = productCatPage.getProductList();
+            productCatPage.addToCart(input.get("productName")) ;
+            CartPage cartPage = productCatPage.goToCart();
+            Boolean match = cartPage.VerifyProductDisplay(input.get("productName"));
 
             Assert.assertTrue(match);
-            CheckOutPage checkOutPage=cartPage.goToCheckout();
+            CheckOutPage checkOutPage = cartPage.goToCheckout();
             checkOutPage.SelectCountry("india");
-            ConfirmationPage confirmationPage=checkOutPage.SumbitOrder();
+            ConfirmationPage confirmationPage = checkOutPage.SumbitOrder();
 
             String confirmMessage = confirmationPage.getConfirmationMessage();
             Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-           // driver.close();
-
-
+            // driver.close();
         }
-        public void orderHistoryTest() throws IOException, InterruptedException {
-        
-        }
+    @DataProvider
+    public Object[][] getData() throws IOException {
+        List<HashMap<String, String>> data = this.getJsonDataToMap(System.getProperty
+                ("user.dir") + "/src/main/java/Data/jSonFile.json");
+        return new Object[][]{{data.get(0)}, {data.get(1)}};
+
 
     }
+}
 
 
