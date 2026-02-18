@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="rahulshettyacademy.TestComponent.Listener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Error Login Validation Test">
+        <classes>
+            <class name="rahulshettyacademy.Tests.errorLoginValdation"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="SubmitOrderTest">
+        <classes>
+            <class name="rahulshettyacademy.Tests.SubmitOrderTest"/>
+        </classes>
+    </test>
+
+
+
+
+
+
+        </suite>
